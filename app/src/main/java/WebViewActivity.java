@@ -23,7 +23,6 @@ public class WebViewActivity extends AppCompatActivity {
 
         web.setWebViewClient(new myWebClient());
         web.getSettings().setJavaScriptEnabled(true);
-        String msg = "Red Fort";
         web.loadUrl("https://en.wikipedia.org/wiki/"+msg);
 
     }

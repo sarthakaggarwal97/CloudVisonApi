@@ -52,7 +52,7 @@ public class CloudActivity extends AppCompatActivity {
     private ImageView selectedImage;
     private TextView resultTextView;
     Account mAccount;
-
+    String msg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -228,9 +228,11 @@ public class CloudActivity extends AppCompatActivity {
             for (EntityAnnotation text : texts) {
                 message.append(String.format(Locale.getDefault(), "%s: %s",
                         text.getLocale(), text.getDescription()));
+
                 message.append("\n");
             }
-        } else {
+        } else
+            {
             message.append("nothing\n");
         }
 
@@ -242,8 +244,11 @@ public class CloudActivity extends AppCompatActivity {
                 message.append(String.format(Locale.getDefault(), "%.3f: %s",
                         landmark.getScore(), landmark.getDescription()));
                 Log.i("TAG", landmark.getDescription());
+                msg = landmark.getDescription();
+                Intent intent = new Intent();
+                intent.putExtra(msg, 1);
                 message.append("\n");
-
+                startActivity(intent);
                 }
            
         } else {
