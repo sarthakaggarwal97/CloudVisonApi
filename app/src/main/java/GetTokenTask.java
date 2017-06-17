@@ -31,7 +31,7 @@ public class GetTokenTask extends AsyncTask<Void, Void, Void> {
         try {
             String token = fetchToken();
             if (token != null) {
-                ((CloudActivity)mActivity).onTokenReceived(token);
+                ((com.sarthak.sarandev.cloudvisionapi.CloudActivity)mActivity).onTokenReceived(token);
             }
         } catch (IOException e) {
             e.printStackTrace();
